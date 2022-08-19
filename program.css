@@ -1,0 +1,52 @@
+/* this is the main stye for the pixel program that is used within the program */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body{
+    height: 100%;
+}
+body{
+    background-color: rgb(189, 255, 233); /* the background color used within the program */
+    display: flex; /* modifies the display to suit different sizes of moniters  */
+    justify-content: center; /* all things get in centre of the screen */
+    align-items: center; 
+    flex-direction: column;
+}
+
+.navbar, .container{
+    background-color: rgb(28, 28, 29); /* navbar's background colour is black */
+    width: 800px;
+    border-radius: 3px;
+}
+.navbar{ /* the lenght and width and thickness of the nav bar*/
+    padding: 1em;
+    margin-bottom: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn, input{
+    height: 35px;
+    padding: 0 1em;
+}
+.color{
+    padding: 0 .25em;
+    width: 100px;
+    margin: 0 1em;
+}
+
+.container{ /* the variables defined as container and all their adjustments made*/
+    --size: 4;
+    height: 800px;
+    display: grid;
+    grid-template-columns: repeat(var(--size), 1fr);
+    grid-template-rows: repeat(var(--size), 1fr);
+    gap: 3px;
+    padding: 3px;
+}
+.pixel{ /* the grids main colour and the radius of the boder of the grid*/
+    background-color: rgb(61, 61, 61);
+    border-radius: 2px;
+}

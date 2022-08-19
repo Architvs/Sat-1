@@ -1,0 +1,126 @@
+<!-- This page is used for the searching some of the past users that have used the program-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- this the stylesheet used to design the table without using a css file -->
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 10px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myTable {
+  border-collapse: collapse;
+  width: 100%;
+  border: 1px solid #ddd;
+  font-size: 18px;
+}
+
+#myTable th, #myTable td {
+  text-align: left;
+  padding: 12px;
+}
+
+#myTable tr {
+  border-bottom: 1px solid #ddd;
+}
+
+#myTable tr.header, #myTable tr:hover {
+  background-color: #f1f1f1;
+}
+</style>
+</head>
+<body>
+
+<h2>My Previous Testers</h2> 
+<input type="button" onclick="location.href='index.html';" value="Login page" />
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+
+<table id="myTable">
+  <tr class="header">
+    <th style="width:60%;">Name</th>
+    <th style="width:40%;">Email</th>
+  </tr>
+  <tr>
+    <td>John</td>
+    <td>john-doe@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Mary</td>
+    <td>maryjacobs@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Dave</td>
+    <td>davesmith@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Jane</td>
+    <td>janestuart@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Jim</td>
+    <td>jimlevenstein@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Finch</td>
+    <td>paulfinch@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Nicole</td>
+    <td>nicolejacobs@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Chris</td>
+    <td>chrisostreicher@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Kurt</td>
+    <td>kurtwright@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Maggie</td>
+    <td>maggiepatterson@bogusemail.com</td>
+  </tr>
+  <tr>
+    <td>Stifler</td>
+    <td>stevestifler@bogusemail.com</td>
+  </tr>
+</table>
+
+<!-- this function uses the javascript to help break down sear -->
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+</body>
+</html>
